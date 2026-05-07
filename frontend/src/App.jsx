@@ -116,7 +116,7 @@ function App() {
             </div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="gradient-text">YouTube Downloader</span>
+            <span className="gradient-text">Manthan Downloader</span>
           </h1>
           <p className="text-gray-300 text-lg md:text-xl">
             Download videos and audio in high quality for free
