@@ -22,7 +22,7 @@ function sanitizeUrl(url) {
 // Execute yt-dlp command safely
 function executeYtDlp(args) {
   return new Promise((resolve, reject) => {
-    const ytDlp = spawn('yt-dlp', args, {
+    const ytDlp = spawn('python', ['-m', 'yt_dlp', ...args], {
       stdio: ['ignore', 'pipe', 'pipe'],
       shell: false
     });
@@ -156,7 +156,7 @@ export async function downloadAudio(req, res) {
       sanitizedUrl
     ];
 
-    const ytDlp = spawn('yt-dlp', args, {
+    const ytDlp = spawn('python', ['-m', 'yt_dlp', ...args], {
       stdio: ['ignore', 'pipe', 'pipe'],
       shell: false
     });
@@ -226,7 +226,7 @@ export async function downloadVideo(req, res) {
       sanitizedUrl
     ];
 
-    const ytDlp = spawn('yt-dlp', args, {
+    const ytDlp = spawn('python', ['-m', 'yt_dlp', ...args], {
       stdio: ['ignore', 'pipe', 'pipe'],
       shell: false
     });
