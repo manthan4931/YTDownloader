@@ -8,7 +8,7 @@ const api = axios.create({
 });
 
 export const fetchVideoInfo = async (url) => {
-  const response = await api.get('/api/info', { params: { url } });
+  const response = await api.get(API_BASE_URL, { params: { url } });
   return response.data;
 };
 
