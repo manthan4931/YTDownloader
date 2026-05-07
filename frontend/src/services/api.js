@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL ="https://ytdownloader-9ws2.onrender.com";
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -8,7 +8,7 @@ const api = axios.create({
 });
 
 export const fetchVideoInfo = async (url) => {
-  const response = await api.get(API_BASE_URL, { params: { url } });
+  const response = await api.get('/api/info', { params: { url } });
   return response.data;
 };
 
